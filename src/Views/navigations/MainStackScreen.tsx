@@ -5,6 +5,7 @@ import {
   StatusBar,
   View,
   Text,
+  Dimensions,
   TouchableHighlight,
   StyleSheet,
 } from 'react-native';
@@ -20,6 +21,8 @@ const MainStackNav = ({ navigation }: { navigation: any }) => {
   const { colors } = theme;
 
   const actionSheetRef = createRef<any>();
+
+  const windowWith = Dimensions.get('screen').width;
 
   return (
     <>
@@ -60,7 +63,11 @@ const MainStackNav = ({ navigation }: { navigation: any }) => {
                   <Layout>
                     <screen.component {...props} key={screen.name} />
                   </Layout>
-                  <View style={styles.touchableContainer}>
+                  <View
+                    style={[
+                      styles.touchableContainer,
+                      { right: windowWith / 2.3 },
+                    ]}>
                     <ActionSheet
                       ref={actionSheetRef}
                       headerAlwaysVisible={true}
@@ -104,10 +111,8 @@ const MainStackNav = ({ navigation }: { navigation: any }) => {
 
 const styles = StyleSheet.create({
   touchableContainer: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    marginBottom: 30,
+    position: 'absolute',
+    bottom: 30,
   },
   actionSheetButton: {
     width: 65,
@@ -117,8 +122,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   actionSheetContainer: {
-    width: '95%',
-    borderRadius: 30,
+    borderRadius: 35,
     padding: 20,
   },
 });

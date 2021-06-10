@@ -41,6 +41,96 @@ const Home = ({ navigation }: { navigation?: any }) => {
         total y estudiar que otra opción.
       </Text>
 
+      <Text>This is the HomeScreen</Text>
+      <Text>Acá debería ir el resumen de ingresos, gastos, Equilibrio</Text>
+      <Text>
+        Agregar botón de + tipo android donde abra o modal pantalla completa o
+        directamente la camara.
+      </Text>
+      <Text>
+        Automáticamente guardar la foto con la fecha y hora del día, y de
+        inmediato mostrar las siguientes opciones:
+      </Text>
+      <Text>
+        Categoría a agregar el gasto, o multiples categorías, campo para monto
+        total y estudiar que otra opción.
+      </Text>
+
+      <Text>This is the HomeScreen</Text>
+      <Text>Acá debería ir el resumen de ingresos, gastos, Equilibrio</Text>
+      <Text>
+        Agregar botón de + tipo android donde abra o modal pantalla completa o
+        directamente la camara.
+      </Text>
+      <Text>
+        Automáticamente guardar la foto con la fecha y hora del día, y de
+        inmediato mostrar las siguientes opciones:
+      </Text>
+      <Text>
+        Categoría a agregar el gasto, o multiples categorías, campo para monto
+        total y estudiar que otra opción.
+      </Text>
+
+      <Text>This is the HomeScreen</Text>
+      <Text>Acá debería ir el resumen de ingresos, gastos, Equilibrio</Text>
+      <Text>
+        Agregar botón de + tipo android donde abra o modal pantalla completa o
+        directamente la camara.
+      </Text>
+      <Text>
+        Automáticamente guardar la foto con la fecha y hora del día, y de
+        inmediato mostrar las siguientes opciones:
+      </Text>
+      <Text>
+        Categoría a agregar el gasto, o multiples categorías, campo para monto
+        total y estudiar que otra opción.
+      </Text>
+
+      <Text>This is the HomeScreen</Text>
+      <Text>Acá debería ir el resumen de ingresos, gastos, Equilibrio</Text>
+      <Text>
+        Agregar botón de + tipo android donde abra o modal pantalla completa o
+        directamente la camara.
+      </Text>
+      <Text>
+        Automáticamente guardar la foto con la fecha y hora del día, y de
+        inmediato mostrar las siguientes opciones:
+      </Text>
+      <Text>
+        Categoría a agregar el gasto, o multiples categorías, campo para monto
+        total y estudiar que otra opción.
+      </Text>
+
+      <Text>This is the HomeScreen</Text>
+      <Text>Acá debería ir el resumen de ingresos, gastos, Equilibrio</Text>
+      <Text>
+        Agregar botón de + tipo android donde abra o modal pantalla completa o
+        directamente la camara.
+      </Text>
+      <Text>
+        Automáticamente guardar la foto con la fecha y hora del día, y de
+        inmediato mostrar las siguientes opciones:
+      </Text>
+      <Text>
+        Categoría a agregar el gasto, o multiples categorías, campo para monto
+        total y estudiar que otra opción.
+      </Text>
+
+      <Text>This is the HomeScreen</Text>
+      <Text>Acá debería ir el resumen de ingresos, gastos, Equilibrio</Text>
+      <Text>
+        Agregar botón de + tipo android donde abra o modal pantalla completa o
+        directamente la camara.
+      </Text>
+      <Text>
+        Automáticamente guardar la foto con la fecha y hora del día, y de
+        inmediato mostrar las siguientes opciones:
+      </Text>
+      <Text>
+        Categoría a agregar el gasto, o multiples categorías, campo para monto
+        total y estudiar que otra opción.
+      </Text>
+
       <Button
         title="Go to Modal"
         onPress={() => navigation.navigate('Modal')}
