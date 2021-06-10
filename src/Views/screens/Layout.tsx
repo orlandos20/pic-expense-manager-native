@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { StyleSheet, Animated, Easing } from 'react-native';
-import { View } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import ActionButton from '../components/ActionButton';
 
@@ -61,10 +61,9 @@ const Layout = ({ children }: { children: any }) => {
           },
         ],
       }}>
-      <View style={styles.Layout}>
-        {children}
-        <ActionButton navigation={navigation} />
-      </View>
+      <View style={styles.Layout}>{children}</View>
+
+      {/* <ActionButton navigation={navigation} actionSheetRef={actionSheetRef} /> */}
     </Animated.ScrollView>
   );
 };

@@ -1,13 +1,19 @@
 import React from 'react';
-import {FloatingAction} from 'react-native-floating-action';
+import { FloatingAction } from 'react-native-floating-action';
 import Icon from 'react-native-ionicons';
 
-import {useTheme} from '@react-navigation/native';
-import {DrawerStackRoutes} from '../Routes/Routes';
+import { useTheme } from '@react-navigation/native';
+import { DrawerStackRoutes } from '../Routes/Routes';
 
-const ActionButton = ({navigation}: {navigation: any}) => {
+const ActionButton = ({
+  navigation,
+  actionSheetRef,
+}: {
+  navigation: any;
+  actionSheetRef: any;
+}) => {
   const theme = useTheme();
-  const {colors} = theme;
+  const { colors } = theme;
 
   const ActionButonMenu = DrawerStackRoutes.map(item => item.name);
 
@@ -28,7 +34,8 @@ const ActionButton = ({navigation}: {navigation: any}) => {
       color={colors.primary}
       overlayColor="rgba(0, 0, 0, 0.01)"
       onPressItem={name => {
-        navigation.navigate(name);
+        actionSheetRef.current?.setModalVisible();
+        // navigation.navigate(name);
       }}
     />
   );

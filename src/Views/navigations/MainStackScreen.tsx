@@ -1,27 +1,30 @@
-import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {MainStackRoutes} from '../Routes/Routes';
-import {StatusBar} from 'react-native';
-import {useTheme} from '@react-navigation/native';
+import React, { createRef } from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import { MainStackRoutes } from '../Routes/Routes';
+import {
+  StatusBar,
+  View,
+  Text,
+  TouchableHighlight,
+  StyleSheet,
+} from 'react-native';
+import { useTheme } from '@react-navigation/native';
 import Layout from '../screens/Layout';
 import Icon from 'react-native-ionicons';
+import ActionSheet from 'react-native-actions-sheet';
 
 const MainStack = createStackNavigator();
 
-const MainStackNav = ({navigation}: {navigation: any}) => {
+const MainStackNav = ({ navigation }: { navigation: any }) => {
   const theme = useTheme();
-  const {colors} = theme;
+  const { colors } = theme;
+
+  const actionSheetRef = createRef<any>();
 
   return (
     <>
       <StatusBar translucent backgroundColor="rgba(0, 0, 0, 0.01)" animated />
       <MainStack.Navigator initialRouteName="Home">
-        {/* <MainStack.Screen
-            name="Drawer"
-            component={DrawerStackScreens}
-            options={{ headerShown: false }}
-          /> */}
-
         {MainStackRoutes &&
           MainStackRoutes.length > 0 &&
           MainStackRoutes.map(screen => (
@@ -51,14 +54,46 @@ const MainStackNav = ({navigation}: {navigation: any}) => {
                       onPress={() => navigation.toggleDrawer()}
                     />
                   ),
-                // headerStyle: {
-                //   backgroundColor: "#f4511e"
-                // }
               }}>
               {props => (
-                <Layout>
-                  <screen.component {...props} key={screen.name} />
-                </Layout>
+                <>
+                  <Layout>
+                    <screen.component {...props} key={screen.name} />
+                  </Layout>
+                  <View style={styles.touchableContainer}>
+                    <ActionSheet
+                      ref={actionSheetRef}
+                      headerAlwaysVisible={true}
+                      CustomHeaderComponent={<Text>Custom Header</Text>}
+                      animated={true}
+                      gestureEnabled={true}
+                      indicatorColor={'red'}
+                      extraScroll={10}
+                      bounceOnOpen={true}
+                      overlayColor={'blue'}
+                      defaultOverlayOpacity={0.6}
+                      containerStyle={styles.actionSheetContainer}>
+                      <View>
+                        <Text>Pruebaaa</Text>
+                        <Text>Pruebaaa</Text>
+                        <Text>Pruebaaa</Text>
+                        <Text>Pruebaaa</Text>
+                        <Text>Pruebaaa</Text>
+
+                        <Text>Pruebaaa</Text>
+                        <Text>Pruebaaa</Text>
+                      </View>
+                    </ActionSheet>
+                    <TouchableHighlight
+                      onPress={() => actionSheetRef.current?.setModalVisible()}
+                      style={[
+                        styles.actionSheetButton,
+                        { backgroundColor: colors.primary },
+                      ]}>
+                      <Text>+</Text>
+                    </TouchableHighlight>
+                  </View>
+                </>
               )}
             </MainStack.Screen>
           ))}
@@ -66,5 +101,26 @@ const MainStackNav = ({navigation}: {navigation: any}) => {
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  touchableContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginBottom: 30,
+  },
+  actionSheetButton: {
+    width: 65,
+    height: 65,
+    borderRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  actionSheetContainer: {
+    width: '95%',
+    borderRadius: 30,
+    padding: 20,
+  },
+});
 
 export default MainStackNav;

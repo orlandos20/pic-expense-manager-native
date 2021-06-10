@@ -1,13 +1,13 @@
 import React from 'react';
-import {useTheme} from '@react-navigation/native';
+import { useTheme } from '@react-navigation/native';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
   DrawerItem,
 } from '@react-navigation/drawer';
-import {DrawerStackRoutes} from '../Routes/Routes';
+import { DrawerStackRoutes } from '../Routes/Routes';
 import MainStackNav from './MainStackScreen';
-import {StyleSheet, View, Text, StatusBar} from 'react-native';
+import { StyleSheet, View, Text, StatusBar } from 'react-native';
 import Layout from '../screens/Layout';
 import Icon from 'react-native-ionicons';
 
@@ -15,7 +15,7 @@ const DrawerStack = createDrawerNavigator();
 
 const CustomDrawerContent = (props?: any) => {
   const theme = useTheme();
-  const {colors} = theme;
+  const { colors } = theme;
 
   return (
     <DrawerContentScrollView {...props}>
@@ -27,7 +27,7 @@ const CustomDrawerContent = (props?: any) => {
         DrawerStackRoutes.map(screen => (
           <DrawerItem
             label={() => (
-              <Text style={{color: colors.text}}>{screen?.name}</Text>
+              <Text style={{ color: colors.text }}>{screen?.name}</Text>
             )}
             onPress={() => {
               // Navigate using the `navigation` prop that you received
@@ -40,9 +40,9 @@ const CustomDrawerContent = (props?: any) => {
   );
 };
 
-const DrawerStackScreens = ({toggleDrawer}: {toggleDrawer: any}) => {
+const DrawerStackScreens = ({ toggleDrawer }: { toggleDrawer: any }) => {
   const theme = useTheme();
-  const {colors} = theme;
+  const { colors } = theme;
 
   return (
     <>
@@ -53,7 +53,7 @@ const DrawerStackScreens = ({toggleDrawer}: {toggleDrawer: any}) => {
           headerLeft: () => {
             return (
               <Icon
-                style={{marginLeft: 10}}
+                style={{ marginLeft: 10 }}
                 name="md-menu"
                 size={36}
                 color={colors.primary}
@@ -64,7 +64,7 @@ const DrawerStackScreens = ({toggleDrawer}: {toggleDrawer: any}) => {
         }}
         drawerContentOptions={{
           activeTintColor: colors.primary,
-          itemStyle: {marginVertical: 10},
+          itemStyle: { marginVertical: 10 },
         }}>
         <DrawerStack.Screen name="Home" component={MainStackNav} />
 
@@ -74,7 +74,7 @@ const DrawerStackScreens = ({toggleDrawer}: {toggleDrawer: any}) => {
             <DrawerStack.Screen
               name={screen.name}
               key={screen.name}
-              options={({navigation}) => ({
+              options={({ navigation }) => ({
                 ...screen.options,
                 headerLeft: () => (
                   <Icon

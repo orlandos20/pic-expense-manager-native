@@ -1,9 +1,9 @@
 import React from 'react';
-import {ButtonGroup} from 'react-native-elements';
-import {StyleSheet, View, Text, Button} from 'react-native';
-import {useTheme} from '@react-navigation/native';
+import { ButtonGroup } from 'react-native-elements';
+import { StyleSheet, View, Text, Button } from 'react-native';
+import { useTheme } from '@react-navigation/native';
 
-const Home = ({navigation}: {navigation?: any}) => {
+const Home = ({ navigation }: { navigation?: any }) => {
   const [selectedIndex, setSelectedIndex] = React.useState<number>(0);
   const buttons = ['Hello', 'World', 'Buttons'];
   const theme = useTheme();
@@ -23,7 +23,7 @@ const Home = ({navigation}: {navigation?: any}) => {
         onPress={updateIndex}
         selectedIndex={selectedIndex}
         buttons={buttons}
-        containerStyle={{height: 100}}
+        containerStyle={{ height: 100 }}
       />
 
       <Text>This is the HomeScreen</Text>
