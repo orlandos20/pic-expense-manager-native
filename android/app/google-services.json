@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1003314026575",
+    "project_id": "pic-expense-manager",
+    "storage_bucket": "pic-expense-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003314026575:android:2e46ed29a549cfb5a4723a",
+        "android_client_info": {
+          "package_name": "com.awesometsproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003314026575-p1tdc5v3g3ioj7oans4dgk35hl3s1l9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA2md7ybOwb66EZPTwLbXN-eMLnHD5MV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003314026575-p1tdc5v3g3ioj7oans4dgk35hl3s1l9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
