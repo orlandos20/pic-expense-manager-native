@@ -1,11 +1,11 @@
 import React from 'react';
-import {StyleSheet, Animated, Easing} from 'react-native';
-import {View} from 'react-native';
-import {useFocusEffect} from '@react-navigation/native';
+import { StyleSheet, Animated, Easing } from 'react-native';
+import { View } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import ActionButton from '../components/ActionButton';
 
-const Layout = ({children}: {children: any}) => {
-  const {navigation} = children.props;
+const Layout = ({ children }: { children: any }) => {
+  const { navigation } = children.props;
 
   // fadeAnim will be used as the value for opacity. Initial Value: 0
   const fadeAnim = React.useRef(new Animated.Value(0)).current;
