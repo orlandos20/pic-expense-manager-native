@@ -80,16 +80,25 @@ const MainStackNav = ({ navigation }: { navigation: any }) => {
                       overlayColor={'blue'}
                       defaultOverlayOpacity={0.6}
                       containerStyle={styles.actionSheetContainer}>
-                      <View>
-                        <Text>Pruebaaa</Text>
-                        <Text>Pruebaaa</Text>
-                        <Text>Pruebaaa</Text>
-                        <Text>Pruebaaa</Text>
-                        <Text>Pruebaaa</Text>
-
-                        <Text>Pruebaaa</Text>
-                        <Text>Pruebaaa</Text>
+                      <View style={{ minHeight: 400 }}>
+                        <View style={styles.actionSheetCardContainer}>
+                          <View style={styles.actionSheetCard}>
+                            <Text style={styles.cardText}>Income</Text>
+                          </View>
+                          <View style={styles.actionSheetCard}>
+                            <Text style={styles.cardText}>Expense</Text>
+                          </View>
+                        </View>
                       </View>
+
+                      <Text>Pruebaaa</Text>
+                      <Text>Pruebaaa</Text>
+                      <Text>Pruebaaa</Text>
+                      <Text>Pruebaaa</Text>
+                      <Text>Pruebaaa</Text>
+
+                      <Text>Pruebaaa</Text>
+                      <Text>Pruebaaa</Text>
                     </ActionSheet>
                     <TouchableHighlight
                       onPress={() => actionSheetRef.current?.setModalVisible()}
@@ -122,8 +131,30 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   actionSheetContainer: {
+    minHeight: 400,
     borderRadius: 35,
     padding: 20,
+    backgroundColor: '#f9f9f9',
+  },
+  actionSheetCardContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  actionSheetCard: {
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-end',
+    width: 200,
+    height: 250,
+    borderRadius: 20,
+  },
+  cardText: {
+    padding: 20,
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
 
