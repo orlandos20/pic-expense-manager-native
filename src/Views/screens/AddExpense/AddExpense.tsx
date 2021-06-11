@@ -10,6 +10,7 @@ import {
   Platform,
   StyleSheet,
 } from 'react-native';
+import TransactionItem from '../../components/commons/TransactionItem';
 import * as ImagePicker from 'react-native-image-picker';
 import { OCRTextResponse } from '../commonEntities/Entities';
 //@ts-ignore
@@ -93,57 +94,9 @@ const AddExpense = ({ navigation }: { navigation: any }) => {
     </View>
   ) : (
     <View style={{ flex: 1, marginTop: 10 }}>
-      <View
-        style={{
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          paddingLeft: 20,
-          height: 100,
-          marginBottom: 20,
-        }}>
-        <View
-          style={{
-            width: 50,
-            height: 50,
-            borderWidth: 1,
-            borderStyle: 'dashed',
-            borderRadius: 100,
-            backgroundColor: '#fff',
-          }}
-        />
-        <View style={{ paddingLeft: 20 }}>
-          <Text style={styles.transactionLabel}>Transaction type</Text>
-          <Text style={styles.transactionName}>Expense</Text>
-        </View>
-      </View>
+      <TransactionItem label={'Transaction type'} text={'Expense'} />
+      <TransactionItem label={'Payee'} text={payeeText} bgColor={'#fff'} />
 
-      <View
-        style={{
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          paddingLeft: 20,
-          width: '100%',
-          height: 100,
-          backgroundColor: '#fff',
-          borderRadius: 20,
-        }}>
-        <View
-          style={{
-            width: 50,
-            height: 50,
-            borderWidth: 1,
-            borderStyle: 'dashed',
-            borderRadius: 100,
-            backgroundColor: '#fff',
-          }}
-        />
-        <View style={{ paddingLeft: 20 }}>
-          <Text style={{ color: 'rgba(183,181,179,0.9)', paddingBottom: 5 }}>
-            Payee
-          </Text>
-          <Text style={styles.transactionName}>{payeeText}</Text>
-        </View>
-      </View>
       <KeyboardAvoidingView
         style={styles.keyboardAvoiding}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
