@@ -9,5 +9,6 @@ module.exports = {
         'no-inline-styles': false,
       },
     ],
+    curly: [2, 'all'],
   },
 };

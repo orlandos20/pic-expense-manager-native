@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React, { useEffect, createRef } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { MainStackRoutes } from '../Routes/Routes';
 import {
@@ -73,21 +73,27 @@ const MainStackNav = ({ navigation }: { navigation: any }) => {
                       headerAlwaysVisible={true}
                       CustomHeaderComponent={<Text>Custom Header</Text>}
                       animated={true}
-                      gestureEnabled={true}
-                      indicatorColor={'red'}
-                      extraScroll={10}
+                      indicatorColor={'#000'}
                       bounceOnOpen={true}
                       overlayColor={'blue'}
                       defaultOverlayOpacity={0.6}
+                      drawUnderStatusBar={true}
+                      closeOnPressBack={true}
+                      keyboardShouldPersistTaps={'handled'}
+                      bottomOffset={20}
                       containerStyle={styles.actionSheetContainer}>
                       <View style={{ minHeight: 400 }}>
                         <View style={styles.actionSheetCardContainer}>
-                          <View style={styles.actionSheetCard}>
+                          <TouchableHighlight
+                            style={styles.actionSheetCard}
+                            onPress={() => navigation.navigate('Add Income')}>
                             <Text style={styles.cardText}>Income</Text>
-                          </View>
-                          <View style={styles.actionSheetCard}>
+                          </TouchableHighlight>
+                          <TouchableHighlight
+                            style={styles.actionSheetCard}
+                            onPress={() => navigation.navigate('Add Expense')}>
                             <Text style={styles.cardText}>Expense</Text>
-                          </View>
+                          </TouchableHighlight>
                         </View>
                       </View>
 
@@ -99,6 +105,9 @@ const MainStackNav = ({ navigation }: { navigation: any }) => {
 
                       <Text>Pruebaaa</Text>
                       <Text>Pruebaaa</Text>
+                      {/* <Layout>
+                        <screen.component {...props} key={screen.name} />
+                      </Layout> */}
                     </ActionSheet>
                     <TouchableHighlight
                       onPress={() => actionSheetRef.current?.setModalVisible()}
@@ -131,7 +140,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   actionSheetContainer: {
-    minHeight: 400,
+    minHeight: Dimensions.get('screen').height,
     borderRadius: 35,
     padding: 20,
     backgroundColor: '#f9f9f9',

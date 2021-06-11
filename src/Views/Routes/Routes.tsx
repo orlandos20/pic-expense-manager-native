@@ -1,6 +1,6 @@
 import Home from '../screens/Home/Home';
-import AddFromCamera from '../screens/AddFromCamera/AddFromCamera';
-import AddFromGallery from '../screens/AddFromGallery/AddFromGallery';
+import AddIncome from '../screens/AddIncome/AddIncome';
+import AddExpense from '../screens/AddExpense/AddExpense';
 import CreateItemModal from '../screens/CreateItemModal/CreateItemModal';
 
 export const MainStackRoutes = [
@@ -12,35 +12,35 @@ export const MainStackRoutes = [
     },
   },
   {
-    name: 'Add from Camera',
-    component: AddFromCamera,
+    name: 'Add Income',
+    component: AddIncome,
     options: {
-      title: 'Add a Expense',
+      title: 'Add Income',
     },
   },
   {
-    name: 'Add from Gallery',
-    component: AddFromGallery,
+    name: 'Add Expense',
+    component: AddExpense,
     options: {
-      title: 'add item',
+      title: 'Add Expense',
     },
   },
 ];
 
 export const DrawerStackRoutes = [
   {
-    name: 'Add from Camera',
-    component: AddFromCamera,
+    name: 'Add Income',
+    component: AddIncome,
     options: {
-      title: 'Add a Expense',
+      title: 'Add Income',
       headerShown: true,
     },
   },
   {
-    name: 'Add from Gallery',
-    component: AddFromGallery,
+    name: 'Add Expense',
+    component: AddExpense,
     options: {
-      title: 'add item',
+      title: 'Add Expense',
       headerShown: true,
     },
   },
